@@ -7,26 +7,25 @@ var engine, world;
 
 var chain;
 
-var rect,ball;
+var recta,ball;
 
 function setup(){
     var canvas = createCanvas(1200,400);
     engine = Engine.create();
     world = engine.world;
 
-    rect = new Rect(50,200,10,PI/2);
-    chain = new Chain(rect.body,ball.body);
-    ball = new ball(100,100);
+    recta = new Recte(50,200,10,PI/2);
+    ball = new Ball(100,100);
+    chain = new Chain(recta.body,ball.body);
+    
 
 
 }
 
 function draw(){
-    background(backgroundImg);
+    background(0);
     Engine.update(engine);
-    console.log(box2.body.position.x);
-    console.log(box2.body.position.y);
-    console.log(box2.body.angle);
-    rect.display();
+    
+    recta.display();
     chain.display();
 }
